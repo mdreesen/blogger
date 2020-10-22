@@ -1,6 +1,7 @@
 // dependencies
 const express = require('express');
-const sequelize = requre('./config/connection.js');
+const routes = require('./controllers');
+const sequelize = require('./config/connection.js');
 const path = require('path');
 const session = require('express-session');
 const sequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -16,7 +17,7 @@ const sess = {
     cookie: {},
     resave: false,
     saveUninitialized: true,
-    store: new SequelizeStore({
+    store: new sequelizeStore({
         db: sequelize
     })
 };
@@ -24,12 +25,12 @@ const sess = {
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
-    // app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sess));
-// app.use(routes);
+app.use(routes);
 
 // connect to handlebars engine
-app.engine('handlebars', dbs.engine);
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 sequelize.sync({ force: false }).then(() => {
