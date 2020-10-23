@@ -2,8 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 // create our Post model
 class Post extends Model {
-    static raiseLike(body, models) {
-        return models.Like.create({
+    static raiseEnjoy(body, models) {
+        return models.enjoy.create({
             user_id: body.user_id,
             post_id: body.post_id
         }).then(() => {
@@ -16,8 +16,8 @@ class Post extends Model {
                     'post_url',
                     'title',
                     'created_at', [
-                        sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'),
-                        'like_count'
+                        sequelize.literal('(SELECT COUNT(*) FROM enjoy WHERE post.id = enjoy.post_id)'),
+                        'enjoy_count'
                     ]
                 ],
                 include: [{

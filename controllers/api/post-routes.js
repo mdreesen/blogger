@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User, Comment, Like } = require('../../models');
+const { Post, User, Comment, enjoy } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
                 'id',
                 'post_url',
                 'title',
-                'created_at', [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
+                'created_at', [sequelize.literal('(SELECT COUNT(*) FROM enjoy WHERE post.id = enjoy.post_id)'), 'enjoy_count']
             ],
             order: [
                 ['created_at', 'DESC']
@@ -45,7 +45,7 @@ router.get('/:id', (req, res) => {
                 'id',
                 'post_url',
                 'title',
-                'created_at', [sequelize.literal('(SELECT COUNT(*) FROM like WHERE post.id = like.post_id)'), 'like_count']
+                'created_at', [sequelize.literal('(SELECT COUNT(*) FROM enjoy WHERE post.id = enjoy.post_id)'), 'enjoy_count']
             ],
             include: [{
                     model: Comment,
@@ -88,10 +88,10 @@ router.post('/', (req, res) => {
         });
 });
 
-router.put('/likes', (req, res) => {
+router.put('/enjoys', (req, res) => {
     // custom static method created in models/Post.js
-    Post.raiseLike(req.body, { Like, Comment, User })
-        .then(updatedLikeData => res.json(updatedLikeData))
+    Post.raiseenjoy(req.body, { enjoy, Comment, User })
+        .then(updatedenjoyData => res.json(updatedenjoyData))
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
