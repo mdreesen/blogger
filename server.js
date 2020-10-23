@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3001;
 
 // adding the sess here for user sessions
 const sess = {
-    secret: 'Super secret secret',
+    secret: 'Nandor The Great',
     cookie: {},
     resave: false,
     saveUninitialized: true,
