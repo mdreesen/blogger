@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User, Comment, enjoy } = require('../../models');
+const { Post, User, Comment, Enjoy } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -88,14 +88,17 @@ router.post('/', (req, res) => {
         });
 });
 
-router.put('/enjoys', (req, res) => {
-    // custom static method created in models/Post.js
-    Post.raiseenjoy(req.body, { enjoy, Comment, User })
-        .then(updatedenjoyData => res.json(updatedenjoyData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
+router.put('/enjoy', (req, res) => {
+    // make sure the session exists first
+    if (req.session) {
+        // pass session id along with all destructured properties on req.body
+        Post.raiseEnjoy({...req.body, user_id: req.session.user_id }, { Enjoy, Comment, User })
+            .then(updatedEnjoyData => res.json(updatedEnjoyData))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
 });
 
 router.put('/:id', (req, res) => {

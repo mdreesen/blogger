@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 // create our Post model
 class Post extends Model {
     static raiseEnjoy(body, models) {
-        return models.enjoy.create({
+        return models.Enjoy.create({
             user_id: body.user_id,
             post_id: body.post_id
         }).then(() => {
