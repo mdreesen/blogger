@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 const { User, Post, Comment, enjoy } = require('../../models');
 
 // get all users
@@ -105,7 +106,7 @@ router.post('/login', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     // expects {username: '', email: '', password: ''}
 
     // pass in req.body instead to only update what's passed through
