@@ -1,5 +1,6 @@
 async function deleteFormHandler(event) {
     event.preventDefault();
+    const id = document.querySelector('.edit-post-form').id;
 
     const response = await fetch(`/api/posts/${id}`, {
         method: 'DELETE',

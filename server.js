@@ -23,11 +23,12 @@ const sess = {
     })
 };
 
+app.use(session(sess));
+
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session(sess));
 app.use(routes);
 
 // connect to handlebars engine
@@ -35,5 +36,6 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => console.log(`Now listening on PORT ${PORT}`));
+    app.listen(PORT, () => console.log(`Now listening on PORT ${PORT}
+    ==================================================================`));
 });

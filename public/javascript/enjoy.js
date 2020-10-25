@@ -8,7 +8,7 @@ async function enjoyClickHandler(event) {
     const response = await fetch('/api/posts/enjoy', {
         method: 'PUT',
         body: JSON.stringify({
-            post_id: id
+            enjoy: id
         }),
         headers: {
             'Content-Type': 'application/json'

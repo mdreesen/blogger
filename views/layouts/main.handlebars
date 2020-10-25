@@ -6,20 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blogger</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon2.ico" />
+  <script src="https://kit.fontawesome.com/c2cb9875bc.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+
   <div class="wrapper">
     <header>
-      <h1>
-        <a href="/">Blogger</a>
-      </h1>
       <nav>
         {{#if loggedIn}}
         <a href="/dashboard">dashboard</a>
         <button id="logout" class="btn-no-style">logout</button>
         {{else}}
-        <a href="/login">login</a>
+        <a class="login-link" href="/login">login</a>
         {{/if}}
       </nav>
     </header>

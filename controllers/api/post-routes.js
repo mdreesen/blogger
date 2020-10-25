@@ -82,24 +82,14 @@ router.post('/', withAuth, (req, res) => {
             post_url: req.body.post_url,
             user_id: req.session.user_id
         })
-        .then(dbPostData => res.json(dbPostData))
+        .then(dbPostData => {
+            console.log(dbPostData)
+            res.json(dbPostData)
+        })
         .catch(err => {
             console.log(err);
-            res.status(500).json(err);
+            res.status(400).json(err);
         });
-});
-
-router.put('/enjoy', withAuth, (req, res) => {
-    // make sure the session exists first
-    if (req.session) {
-        // pass session id along with all destructured properties on req.body
-        Post.raiseEnjoy({...req.body, user_id: req.session.user_id }, { Enjoy, Comment, User })
-            .then(updatedEnjoyData => res.json(updatedEnjoyData))
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    }
 });
 
 router.put('/:id', withAuth, (req, res) => {

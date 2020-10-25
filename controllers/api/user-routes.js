@@ -36,7 +36,7 @@ router.get('/:id', (req, res) => {
                     model: Post,
                     attributes: ['title'],
                     through: enjoy,
-                    as: 'enjoyd_posts'
+                    as: 'enjoy_posts'
                 }
             ]
         })
