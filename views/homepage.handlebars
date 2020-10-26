@@ -1,5 +1,11 @@
 <div class="homepage-blogs">
     <h2>Welcome to the homepage!</h2>
+    <h3>Please login or signup to create posts</h3>
+
+    {{#unless posts}}
+    <h2>No posts yet. If there were any, they would display here</h2>
+    {{/unless}}
+
     <ol>
         {{#each posts as |post|}}
         <li>

@@ -4,7 +4,7 @@
                 <span>({{format_url post_url}})</span>
             </div>
             <div class="postData">
-                {{enjoy_count}} {{format_plural "point" enjoy_count}} by {{user.username}} on {{format_date created_at}}
+                Author: {{user.username}} on {{format_date created_at}}
                 |
                 <a href="/post/{{id}}" class="dashboardLinks">{{comments.length}} {{format_plural "comment" comments.length}}</a>
             </div>

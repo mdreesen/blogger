@@ -16,6 +16,10 @@
   </div>
 </section>
 
+{{#unless posts}}
+<h2 class="noBlogYetHeader">No Blogs yet</h2>
+{{/unless}}
+
 {{#if posts.length}}
 <section>
   <h2 class="yourPostHeader">Your Posts</h2>
