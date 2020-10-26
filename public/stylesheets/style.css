@@ -222,3 +222,99 @@ h2 {
 .postListLI {
     padding: 50px
 }
+
+
+/* end new post data form */
+
+
+/* comment form */
+
+.backToDashboardBtn {
+    text-align: center;
+    padding: 25px;
+}
+
+.commentFormContainer {
+    text-align: center
+}
+
+.editPostHeader {
+    padding: 15px;
+}
+
+.linkField,
+.commentData {
+    padding: 15px;
+}
+
+.commentFormSaveBtn {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #A2A2A2;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #A2A2A2;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.commentFormBtns {
+    padding: 15px;
+}
+
+.commentFormSaveBtn:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.commentFormDeleteBtn {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #A2A2A2;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #A2A2A2;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.commentFormDeleteBtn:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+.addCommentForm {
+    padding: 15px;
+    text-align: center;
+}
+
+.addCommentBtn {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #A2A2A2;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #A2A2A2;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.addCommentBtn:hover {
+    color: #000000;
+    background-color: #FFFFFF;
+}
+
+
+/* end of comment form */
