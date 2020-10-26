@@ -38,6 +38,19 @@ a {
     color: #444444
 }
 
+.dashboardNavLink {
+    border: 1px solid;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    color: #fff
+}
+
 a:hover {
     color: #3498db;
 }
@@ -168,4 +181,40 @@ li {
 
 h2 {
     padding-top: 25px;
+}
+
+
+/* new post form */
+
+.newPost {
+    text-align: center;
+    padding: 20px;
+}
+
+.titlePostField {
+    padding: 5px;
+}
+
+.linkPostField {
+    padding: 5px;
+}
+
+.yourPostHeader {
+    text-align: center;
+}
+
+.dashboardLinks {
+    padding: 6px;
+}
+
+.title {
+    padding: 15px;
+}
+
+.postData {
+    padding-bottom: 15px;
+}
+
+.postListLI {
+    padding: 50px
 }

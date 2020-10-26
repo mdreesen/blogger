@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const withAuth = require('../utils/auth');
 const { Post, User, Comment } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/', withAuth, (req, res) => {
     if (req.session.countVisit) {
         req.session.countVisit++;
         req.session.firstTime = false;
